@@ -15,4 +15,10 @@ for i in range(1,n+1):
     s.append(str(i))
 print(''.join(s))
 
+N = int(raw_input())
+for i in range(1, N+1):
+    print(i, end="")
+    
+print(*range(1, int(input())+1), sep='')
+
 
