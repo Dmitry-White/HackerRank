@@ -31,8 +31,7 @@ Created on Sun Jul  12 23:01:57 2017
 #        list.reverse()
         
 #------------------------------------------------
-
-        
+     
 N = int(input())
 lst = []
 for _ in range(N):
