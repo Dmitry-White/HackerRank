@@ -8,22 +8,39 @@ Created on Sun Jul  12 23:01:57 2017
 # "insert i e", "print", "remove e", "append e", "sort", "pop", "reverse".
 # Iterate through each command in order and perform the corresponding operation on your list.
 
+#------------------1st--------------------------
+
+#N = int(input())
+#list = []
+#line = []
+#for i in range(N):
+#    line = str(input()).split(" ")
+#    if line[0] == "insert":
+#        list.insert(int(line[1]),int(line[2]))
+#    if line[0] == "print":
+#        print(list)
+#    if line[0] == "remove":
+#        list.remove(int(line[1]))
+#    if line[0] == "append":
+#        list.append(int(line[1]))
+#    if line[0] == "sort":
+#        list.sort()
+#    if line[0] == "pop":
+#        list.pop()
+#    if line[0] == "reverse":
+#        list.reverse()
+        
+#------------------------------------------------
+
+        
 N = int(input())
-list = []
-line = []
-for i in range(N):
-    line = str(input()).split(" ")
-    if line[0] == "insert":
-        list.insert(int(line[1]),int(line[2]))
-    if line[0] == "print":
-        print(list)
-    if line[0] == "remove":
-        list.remove(int(line[1]))
-    if line[0] == "append":
-        list.append(int(line[1]))
-    if line[0] == "sort":
-        list.sort()
-    if line[0] == "pop":
-        list.pop()
-    if line[0] == "reverse":
-        list.reverse()
+lst = []
+for _ in range(N):
+    line = input().split()
+    cmd = line[0]
+    args = line[1:]
+    if cmd !="print":
+        cmd += "("+ ",".join(args) +")"
+        eval("lst."+cmd)
+    else:
+        print(lst)
