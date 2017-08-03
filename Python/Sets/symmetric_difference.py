@@ -1,5 +1,5 @@
 """
-Created on  Aug  02 23:13:51 2017
+Created on Wed Aug 02 23:13:51 2017
 
 @author: Dmitry White
 """
