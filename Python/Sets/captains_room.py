@@ -4,7 +4,7 @@ Created on Wed Aug 09 23:34:11 2017
 @author: Dmitry White
 """
 
-# Mr. Anant Asankhya is the manager at the INFINITE hotel. The hotel has an infinite amount of rooms.
+# TODO: Mr. Anant Asankhya is the manager at the INFINITE hotel. The hotel has an infinite amount of rooms.
 # One fine day, a finite number of tourists come to stay at the hotel.
 # The tourists consist of:
 #    A Captain.
