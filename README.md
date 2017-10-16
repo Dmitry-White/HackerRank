@@ -2,8 +2,7 @@
 
 <div align="center">
   <sub>
-  <a href="https://github.com/Dmitry-White">Dmitry White</a>
-  .Completing tracks and heading to the Top Rank.
+    <a href="https://github.com/Dmitry-White">Dmitry White</a>. Completing tracks and heading to the Top Rank.
   </sub>
 </div>
 
