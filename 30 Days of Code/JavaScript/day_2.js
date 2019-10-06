@@ -9,7 +9,6 @@ Created on Tue Oct 1 05:20 2019
 // and tax percent (the percentage of the meal price being added as tax) for a meal,
 // find and print the meal's total cost.
 
-'use strict';
 
 function solve(meal_cost, tip_percent, tax_percent) {
   const tip = (meal_cost * tip_percent) / 100;
@@ -35,14 +34,14 @@ process.stdin.setEncoding('utf-8');
 let inputString = '';
 let currentLine = 0;
 
-process.stdin.on('data', inputStdin => {
+process.stdin.on('data', (inputStdin) => {
   inputString += inputStdin;
 });
 
-process.stdin.on('end', _ => {
+process.stdin.on('end', (_) => {
   inputString = inputString.replace(/\s*$/, '')
     .split('\n')
-    .map(str => str.replace(/\s*$/, ''));
+    .map((str) => str.replace(/\s*$/, ''));
 
   main();
 });

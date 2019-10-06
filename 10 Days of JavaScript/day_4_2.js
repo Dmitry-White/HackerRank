@@ -5,10 +5,11 @@
  */
 class Polygon {
   constructor(array) {
-      this.array = array
+    this.array = array;
   }
+
   perimeter() {
-      return this.array.reduce((sum, side) => sum + side, 0);
+    return this.array.reduce((sum, side) => sum + side, 0);
   }
 }
 

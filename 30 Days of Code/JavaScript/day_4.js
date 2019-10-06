@@ -17,47 +17,47 @@ Created on Tue Oct 1 05:20 2019
 //        Otherwise, print "You are old."
 
 function Person(initialAge) {
-    // Add some more code to run some checks on initialAge
-    const AGE_YOUNG = 'You are young.';
-    const AGE_TEENAGER = 'You are a teenager.';
-    const AGE_OLD = 'You are old.';
-    const AGE_NOT_VALID = 'Age is not valid, setting age to 0.'
-  
-    const isValidAge = age => age >= 0;
-    
-    if (!isValidAge(initialAge)) {
-      console.log(AGE_NOT_VALID);
-      this.a = initialAge;
+  // Add some more code to run some checks on initialAge
+  const AGE_YOUNG = 'You are young.';
+  const AGE_TEENAGER = 'You are a teenager.';
+  const AGE_OLD = 'You are old.';
+  const AGE_NOT_VALID = 'Age is not valid, setting age to 0.';
+
+  const isValidAge = (age) => age >= 0;
+
+  if (!isValidAge(initialAge)) {
+    console.log(AGE_NOT_VALID);
+    this.a = initialAge;
+  } else {
+    this.a = initialAge;
+  }
+
+  this.amIOld = function () {
+    const isYoungAge = this.a < 13;
+    const isTeenAge = this.a >= 13 && this.a < 18;
+    // Do some computations in here and print out the correct statement to the console
+    if (isYoungAge) {
+      console.log(AGE_YOUNG);
+    } else if (isTeenAge) {
+      console.log(AGE_TEENAGER);
     } else {
-      this.a = initialAge;
+      console.log(AGE_OLD);
     }
-  
-    this.amIOld = function () {
-      const isYoungAge = this.a < 13;
-      const isTeenAge = this.a >= 13 && this.a < 18;
-      // Do some computations in here and print out the correct statement to the console
-      if (isYoungAge) {
-        console.log(AGE_YOUNG);
-      } else if(isTeenAge) {
-        console.log(AGE_TEENAGER);
-      } else {
-        console.log(AGE_OLD);
-      }
-    };
-  
-    this.yearPasses = function () {
-      // Increment the age of the person in here
-      this.a++;
-    };
+  };
+
+  this.yearPasses = function () {
+    // Increment the age of the person in here
+    this.a++;
+  };
 }
 
 
 // Service Code
 function main() {
-  var T = parseInt(readLine());
+  const T = parseInt(readLine());
   for (i = 0; i < T; i++) {
-    var age = parseInt(readLine());
-    var p = new Person(age);
+    const age = parseInt(readLine());
+    const p = new Person(age);
     p.amIOld();
 
     for (j = 0; j < 3; j++) {
@@ -65,23 +65,23 @@ function main() {
     }
 
     p.amIOld();
-    console.log("");
+    console.log('');
   }
 }
 
 process.stdin.resume();
 process.stdin.setEncoding('ascii');
 
-var input_stdin = "";
-var input_stdin_array = "";
-var input_currentline = 0;
+let input_stdin = '';
+let input_stdin_array = '';
+let input_currentline = 0;
 
-process.stdin.on('data', function (data) {
+process.stdin.on('data', (data) => {
   input_stdin += data;
 });
 
-process.stdin.on('end', function () {
-  input_stdin_array = input_stdin.split("\n");
+process.stdin.on('end', () => {
+  input_stdin_array = input_stdin.split('\n');
   main();
 });
 

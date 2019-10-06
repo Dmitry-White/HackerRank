@@ -1,5 +1,5 @@
-const elem = document.getElementById("res");
-const $ = (selector, callback)  => document.querySelector(selector).addEventListener('click', callback);
+const elem = document.getElementById('res');
+const $ = (selector, callback) => document.querySelector(selector).addEventListener('click', callback);
 
 $('#btn0', clickZero);
 $('#btn1', clickOne);
@@ -35,32 +35,32 @@ function clickClr() {
 
 function clickEql() {
   if (!checkOperator()) {
-    let re = /\d+/g
-    let re2 = /[\+\-\*\/]+/g
-    let numbers = elem.innerHTML.match(re);
-    let operations = elem.innerHTML.match(re2);
+    const re = /\d+/g;
+    const re2 = /[\+\-\*\/]+/g;
+    const numbers = elem.innerHTML.match(re);
+    const operations = elem.innerHTML.match(re2);
     while (operations.length > 0) {
       if (operations.includes('*')) {
-        let indexOfMul = operations.indexOf('*');
-        let mul = (indexOfMul != 0 ? parseInt(numbers[indexOfMul - 1], 2) : parseInt(numbers[indexOfMul], 2)) * parseInt(numbers[indexOfMul + 1], 2);
+        const indexOfMul = operations.indexOf('*');
+        const mul = (indexOfMul != 0 ? parseInt(numbers[indexOfMul - 1], 2) : parseInt(numbers[indexOfMul], 2)) * parseInt(numbers[indexOfMul + 1], 2);
         numbers.splice(indexOfMul, 2);
         numbers.splice(indexOfMul, 0, mul.toString(2));
         operations.splice(indexOfMul, 1);
       } else if (operations.includes('/')) {
-        let indexOfDiv = operations.indexOf('/');
-        let division = (indexOfDiv != 0 ? parseInt(numbers[indexOfDiv - 1], 2) : parseInt(numbers[indexOfDiv], 2)) / parseInt(numbers[indexOfDiv + 1], 2);
+        const indexOfDiv = operations.indexOf('/');
+        const division = (indexOfDiv != 0 ? parseInt(numbers[indexOfDiv - 1], 2) : parseInt(numbers[indexOfDiv], 2)) / parseInt(numbers[indexOfDiv + 1], 2);
         numbers.splice(indexOfDiv, 2);
         numbers.splice(indexOfDiv, 0, division.toString(2));
         operations.splice(indexOfDiv, 1);
       } else if (operations.includes('+')) {
-        let indexOfSum = operations.indexOf('+');
-        let sum = (indexOfSum != 0 ? parseInt(numbers[indexOfSum - 1], 2) : parseInt(numbers[indexOfSum], 2)) + parseInt(numbers[indexOfSum + 1], 2);
+        const indexOfSum = operations.indexOf('+');
+        const sum = (indexOfSum != 0 ? parseInt(numbers[indexOfSum - 1], 2) : parseInt(numbers[indexOfSum], 2)) + parseInt(numbers[indexOfSum + 1], 2);
         numbers.splice(indexOfSum, 2);
         numbers.splice(indexOfSum, 0, sum.toString(2));
         operations.splice(indexOfSum, 1);
       } else {
-        let indexOfSub = operations.indexOf('-');
-        let sub = (indexOfSub != 0 ? parseInt(numbers[indexOfSub - 1], 2) : parseInt(numbers[indexOfSub], 2)) - parseInt(numbers[indexOfSub + 1], 2);
+        const indexOfSub = operations.indexOf('-');
+        const sub = (indexOfSub != 0 ? parseInt(numbers[indexOfSub - 1], 2) : parseInt(numbers[indexOfSub], 2)) - parseInt(numbers[indexOfSub + 1], 2);
         numbers.splice(indexOfSub, 2);
         numbers.splice(indexOfSub, 0, sub.toString(2));
         operations.splice(indexOfSub, 1);
@@ -68,7 +68,7 @@ function clickEql() {
     }
     elem.innerHTML = numbers[0].toString(2);
   } else {
-    alert("Line must ends with number.")
+    alert('Line must ends with number.');
   }
 }
 
@@ -86,12 +86,12 @@ function clickSub() {
 
 function clickMul() {
   if (elem.innerHTML.length != 0 && !checkOperator()) {
-    elem.innerHTML += "*";
+    elem.innerHTML += '*';
   }
 }
 
 function clickDiv() {
   if (elem.innerHTML.length != 0 && !checkOperator()) {
-    elem.innerHTML += "/";
+    elem.innerHTML += '/';
   }
 }

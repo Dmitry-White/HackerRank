@@ -1,4 +1,3 @@
-'use strict';
 
 function getMaxLessThanK(n, k) {
   let max = 0;
@@ -13,7 +12,7 @@ function getMaxLessThanK(n, k) {
     }
   }
   return max;
-};
+}
 
 
 // Service Code
@@ -33,14 +32,12 @@ process.stdin.setEncoding('utf-8');
 let inputString = '';
 let currentLine = 0;
 
-process.stdin.on('data', inputStdin => {
+process.stdin.on('data', (inputStdin) => {
   inputString += inputStdin;
 });
 
-process.stdin.on('end', _ => {
-  inputString = inputString.trim().split('\n').map(string => {
-    return string.trim();
-  });
+process.stdin.on('end', (_) => {
+  inputString = inputString.trim().split('\n').map((string) => string.trim());
 
   main();
 });
@@ -48,4 +45,3 @@ process.stdin.on('end', _ => {
 function readLine() {
   return inputString[currentLine++];
 }
-
