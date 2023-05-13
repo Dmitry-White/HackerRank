@@ -16,7 +16,6 @@ class Square extends Rectangle {
   }
 }
 
-
 // Service Code
 class Rectangle {
   constructor(w, h) {
@@ -25,7 +24,10 @@ class Rectangle {
   }
 }
 
-if (JSON.stringify(Object.getOwnPropertyNames(Square.prototype)) === JSON.stringify(['constructor'])) {
+if (
+  JSON.stringify(Object.getOwnPropertyNames(Square.prototype)) ===
+  JSON.stringify(['constructor'])
+) {
   const rec = new Rectangle(3, 4);
   const sqr = new Square(3);
 

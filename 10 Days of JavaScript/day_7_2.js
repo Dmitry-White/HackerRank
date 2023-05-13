@@ -1,17 +1,15 @@
-
 function regexVar() {
   /*
-     * Declare a RegExp object variable named 're'
-     * It must match ALL occurrences of numbers in a string.
-     */
+   * Declare a RegExp object variable named 're'
+   * It must match ALL occurrences of numbers in a string.
+   */
 
   const re = /\d+/g;
   /*
-     * Do not remove the return statement
-     */
+   * Do not remove the return statement
+   */
   return re;
 }
-
 
 // Service Code
 function main() {
@@ -36,7 +34,10 @@ process.stdin.on('data', (inputStdin) => {
 });
 
 process.stdin.on('end', (_) => {
-  inputString = inputString.trim().split('\n').map((string) => string.trim());
+  inputString = inputString
+    .trim()
+    .split('\n')
+    .map((string) => string.trim());
 
   main();
 });

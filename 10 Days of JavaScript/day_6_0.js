@@ -1,4 +1,3 @@
-
 function getMaxLessThanK(n, k) {
   let max = 0;
   for (let i = 1; i <= n; i++) {
@@ -14,10 +13,9 @@ function getMaxLessThanK(n, k) {
   return max;
 }
 
-
 // Service Code
 function main() {
-  const q = +(readLine());
+  const q = +readLine();
 
   for (let i = 0; i < q; i++) {
     const [n, k] = readLine().split(' ').map(Number);
@@ -37,7 +35,10 @@ process.stdin.on('data', (inputStdin) => {
 });
 
 process.stdin.on('end', (_) => {
-  inputString = inputString.trim().split('\n').map((string) => string.trim());
+  inputString = inputString
+    .trim()
+    .split('\n')
+    .map((string) => string.trim());
 
   main();
 });

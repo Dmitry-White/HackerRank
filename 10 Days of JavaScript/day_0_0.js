@@ -1,10 +1,10 @@
 /**
-*   A line of code that prints "Hello, World!" on a new line is provided in the editor.
-*   Write a second line of code that prints the contents of 'parameterVariable' on a new line.
-*
-*	Parameter:
-*   parameterVariable - A string of text.
-* */
+ *   A line of code that prints "Hello, World!" on a new line is provided in the editor.
+ *   Write a second line of code that prints the contents of 'parameterVariable' on a new line.
+ *
+ *	Parameter:
+ *   parameterVariable - A string of text.
+ * */
 function greeting(parameterVariable) {
   // This line prints 'Hello, World!' to the console:
   console.log('Hello, World!');
@@ -13,7 +13,6 @@ function greeting(parameterVariable) {
   console.log(parameterVariable);
 }
 
-
 // Service Code
 function main() {
   const parameterVariable = readLine();
@@ -21,7 +20,7 @@ function main() {
   greeting(parameterVariable);
 }
 
-'use strict';
+('use strict');
 
 process.stdin.resume();
 process.stdin.setEncoding('utf-8');
@@ -34,7 +33,10 @@ process.stdin.on('data', (inputStdin) => {
 });
 
 process.stdin.on('end', (_) => {
-  inputString = inputString.trim().split('\n').map((string) => string.trim());
+  inputString = inputString
+    .trim()
+    .split('\n')
+    .map((string) => string.trim());
 
   main();
 });

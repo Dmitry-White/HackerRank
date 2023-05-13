@@ -11,7 +11,6 @@ function processData(inputString) {
   console.log(inputString);
 }
 
-
 // Service code
 process.stdin.resume();
 process.stdin.setEncoding('ascii');

@@ -1,4 +1,3 @@
-
 function getGrade(score) {
   if (score > 25 && score <= 30) {
     return 'A';
@@ -32,7 +31,10 @@ process.stdin.on('data', (inputStdin) => {
 });
 
 process.stdin.on('end', (_) => {
-  inputString = inputString.trim().split('\n').map((string) => string.trim());
+  inputString = inputString
+    .trim()
+    .split('\n')
+    .map((string) => string.trim());
 
   main();
 });

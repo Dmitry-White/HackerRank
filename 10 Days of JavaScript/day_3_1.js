@@ -1,4 +1,3 @@
-
 /*
  * Complete the reverseString function
  * Use console.log() to print to stdout.
@@ -24,7 +23,10 @@ process.stdin.on('data', (inputStdin) => {
 });
 
 process.stdin.on('end', (_) => {
-  inputString = inputString.trim().split('\n').map((string) => string.trim());
+  inputString = inputString
+    .trim()
+    .split('\n')
+    .map((string) => string.trim());
 
   main();
 });

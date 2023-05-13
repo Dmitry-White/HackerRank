@@ -51,7 +51,6 @@ function Person(initialAge) {
   };
 }
 
-
 // Service Code
 function main() {
   const T = parseInt(readLine());

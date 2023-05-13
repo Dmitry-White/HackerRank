@@ -1,4 +1,3 @@
-
 /*
  * Return a count of the total number of objects 'o' satisfying o.x == o.y.
  *
@@ -11,13 +10,13 @@ function getCount(objects) {
 
 // Service code
 function main() {
-  const n = +(readLine());
+  const n = +readLine();
   const objects = [];
 
   for (let i = 0; i < n; i++) {
     const [a, b] = readLine().split(' ');
 
-    objects.push({ x: +(a), y: +(b) });
+    objects.push({ x: +a, y: +b });
   }
 
   console.log(getCount(objects));
@@ -34,7 +33,10 @@ process.stdin.on('data', (inputStdin) => {
 });
 
 process.stdin.on('end', (_) => {
-  inputString = inputString.trim().split('\n').map((string) => string.trim());
+  inputString = inputString
+    .trim()
+    .split('\n')
+    .map((string) => string.trim());
 
   main();
 });

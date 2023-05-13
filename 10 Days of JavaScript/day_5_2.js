@@ -1,4 +1,3 @@
-
 /*
  * Modify and return the array so that all even elements are doubled and all odd elements are tripled.
  *
@@ -9,10 +8,9 @@ function modifyArray(nums) {
   return nums.map((num) => (num % 2 ? num * 3 : num * 2));
 }
 
-
 // Service Code
 function main() {
-  const n = +(readLine());
+  const n = +readLine();
   const a = readLine().split(' ').map(Number);
 
   console.log(modifyArray(a).toString().split(',').join(' '));
@@ -29,7 +27,10 @@ process.stdin.on('data', (inputStdin) => {
 });
 
 process.stdin.on('end', (_) => {
-  inputString = inputString.trim().split('\n').map((string) => string.trim());
+  inputString = inputString
+    .trim()
+    .split('\n')
+    .map((string) => string.trim());
 
   main();
 });

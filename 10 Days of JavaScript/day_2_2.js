@@ -1,4 +1,3 @@
-
 /*
  * Complete the vowelsAndConsonants function.
  * Print your output using 'console.log()'.
@@ -8,9 +7,7 @@ function vowelsAndConsonants(s) {
   const vowels = [];
   const consonants = [];
   for (let i = 0; i <= s.length; i++) {
-    vowelsAlphabet.includes(s[i])
-      ? vowels.push(s[i])
-      : consonants.push(s[i]);
+    vowelsAlphabet.includes(s[i]) ? vowels.push(s[i]) : consonants.push(s[i]);
   }
   console.log(`${vowels.join('\n')}\n${consonants.join('\n')}`);
 }
@@ -27,7 +24,10 @@ process.stdin.on('data', (inputStdin) => {
 });
 
 process.stdin.on('end', (_) => {
-  inputString = inputString.trim().split('\n').map((string) => string.trim());
+  inputString = inputString
+    .trim()
+    .split('\n')
+    .map((string) => string.trim());
 
   main();
 });

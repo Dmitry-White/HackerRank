@@ -1,4 +1,3 @@
-
 /*
  * Complete the Rectangle function
  */
@@ -11,8 +10,8 @@ function Rectangle(a, b) {
 
 // Service Code
 function main() {
-  const a = +(readLine());
-  const b = +(readLine());
+  const a = +readLine();
+  const b = +readLine();
 
   const rec = new Rectangle(a, b);
 
@@ -33,7 +32,10 @@ process.stdin.on('data', (inputStdin) => {
 });
 
 process.stdin.on('end', (_) => {
-  inputString = inputString.trim().split('\n').map((string) => string.trim());
+  inputString = inputString
+    .trim()
+    .split('\n')
+    .map((string) => string.trim());
 
   main();
 });

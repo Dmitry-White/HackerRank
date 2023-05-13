@@ -29,7 +29,6 @@ function main() {
   console.log(s + secondString);
 }
 
-
 // Service code
 process.stdin.resume();
 process.stdin.setEncoding('ascii');

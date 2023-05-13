@@ -1,4 +1,3 @@
-
 /*
  * Complete the isPositive function.
  * If 'a' is positive, return "YES".
@@ -8,7 +7,8 @@
 function isPositive(a) {
   if (a > 0) {
     return 'YES';
-  } if (a === 0) {
+  }
+  if (a === 0) {
     throw new Error('Zero Error');
   } else {
     throw new Error('Negative Error');
@@ -17,10 +17,10 @@ function isPositive(a) {
 
 // Service Code
 function main() {
-  const n = +(readLine());
+  const n = +readLine();
 
   for (let i = 0; i < n; i++) {
-    const a = +(readLine());
+    const a = +readLine();
 
     try {
       console.log(isPositive(a));
@@ -41,7 +41,10 @@ process.stdin.on('data', (inputStdin) => {
 });
 
 process.stdin.on('end', (_) => {
-  inputString = inputString.trim().split('\n').map((string) => string.trim());
+  inputString = inputString
+    .trim()
+    .split('\n')
+    .map((string) => string.trim());
 
   main();
 });

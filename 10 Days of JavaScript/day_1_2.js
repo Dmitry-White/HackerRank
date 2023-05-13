@@ -1,4 +1,3 @@
-
 // Write your code here. Read input using 'readLine()' and print output using 'console.log()'.
 
 // Print the area of the circle:
@@ -32,7 +31,10 @@ process.stdin.on('data', (inputStdin) => {
 });
 
 process.stdin.on('end', (_) => {
-  inputString = inputString.trim().split('\n').map((string) => string.trim());
+  inputString = inputString
+    .trim()
+    .split('\n')
+    .map((string) => string.trim());
 
   main();
 });
