@@ -19,4 +19,5 @@ And also - HackerRank competitions, which are usually high-server-load situation
 Besides, sometimes I feel an irresistible urge to go back and rewrite that piece of code that bugged me.
 
 ## Account
+
 <a href="https://www.hackerrank.com/Dmitry_White" target="_blank"><img width="100" height="100" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/HackerRank_Icon-1000px.png/800px-HackerRank_Icon-1000px.png"></a>
