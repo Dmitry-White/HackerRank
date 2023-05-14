@@ -11,26 +11,26 @@ Created on Sat May 13 21:50 2023
   Note: You must use generics to solve this challenge. Do not write overloaded functions.
 */
 
-const printArray = (arr) =>{
-  arr.forEach((element) => console.log(element))
-}
+const printArray = (arr) => {
+  arr.forEach((element) => console.log(element));
+};
 
 const readInputs = (type) => {
   const n = +readLine();
   const arr = [];
 
   for (let i = 0; i < n; i++) {
-      const element = type === "number" ? +readLine() : readLine();
-      arr.push(element);
+    const element = type === 'number' ? +readLine() : readLine();
+    arr.push(element);
   }
 
   return arr;
-}
+};
 
 function doStuff() {
-  const firstArr = readInputs("number");
+  const firstArr = readInputs('number');
   printArray(firstArr);
 
-  const secondArr = readInputs("strings");
+  const secondArr = readInputs('strings');
   printArray(secondArr);
 }
