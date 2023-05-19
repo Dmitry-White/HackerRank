@@ -32,17 +32,16 @@ Solution.prototype.insert = function (head, data) {
   if (!head) {
     this.tail = curr;
     return curr;
-  } else {
-    this.tail.next = curr;
-    this.tail = curr;
-    return head;
   }
+  this.tail.next = curr;
+  this.tail = curr;
+  return head;
 };
 
 Solution.prototype.display = function (head) {
   let start = head;
   while (start) {
-    process.stdout.write(start.data + ' ');
+    process.stdout.write(`${start.data} `);
     start = start.next;
   }
 };

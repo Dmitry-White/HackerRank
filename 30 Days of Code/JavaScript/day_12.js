@@ -18,12 +18,7 @@ class Person {
 
   printPerson() {
     console.log(
-      'Name: ' +
-        this.lastName +
-        ', ' +
-        this.firstName +
-        '\nID: ' +
-        this.idNumber,
+      `Name: ${this.lastName}, ${this.firstName}\nID: ${this.idNumber}`,
     );
   }
 }
@@ -52,15 +47,20 @@ class Student extends Person {
 
     if (avr >= 90 && avr <= 100) {
       return 'O';
-    } else if (avr >= 80 && avr < 90) {
+    }
+    if (avr >= 80 && avr < 90) {
       return 'E';
-    } else if (avr >= 70 && avr < 80) {
+    }
+    if (avr >= 70 && avr < 80) {
       return 'A';
-    } else if (avr >= 55 && avr < 70) {
+    }
+    if (avr >= 55 && avr < 70) {
       return 'P';
-    } else if (avr >= 40 && avr < 55) {
+    }
+    if (avr >= 40 && avr < 55) {
       return 'D';
-    } else if (avr < 40) {
+    }
+    if (avr < 40) {
       return 'T';
     }
   }

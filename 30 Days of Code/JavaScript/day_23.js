@@ -37,12 +37,10 @@ BinarySearchTree.prototype.insert = function (root, data) {
     } else {
       root.left = new Node(data);
     }
+  } else if (root.right) {
+    this.insert(root.right, data);
   } else {
-    if (root.right) {
-      this.insert(root.right, data);
-    } else {
-      root.right = new Node(data);
-    }
+    root.right = new Node(data);
   }
 
   return this.root;

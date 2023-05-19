@@ -40,7 +40,7 @@ Solution.prototype.insert = function (head, data) {
 Solution.prototype.display = function (head) {
   let start = head;
   while (start) {
-    process.stdout.write(start.data + ' ');
+    process.stdout.write(`${start.data} `);
     start = start.next;
   }
 };

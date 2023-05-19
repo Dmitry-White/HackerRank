@@ -31,10 +31,12 @@ const calculateFine = (returned, due) => {
 
   if (+returnedYear > +dueYear) {
     return 10000;
-  } else if (+returnedYear === +dueYear) {
+  }
+  if (+returnedYear === +dueYear) {
     if (+returnedMonth > +dueMonth) {
       return 500 * (+returnedMonth - +dueMonth);
-    } else if (+returnedMonth === +dueMonth) {
+    }
+    if (+returnedMonth === +dueMonth) {
       if (+returnedDay > +dueDay) {
         return 15 * (+returnedDay - +dueDay);
       }
