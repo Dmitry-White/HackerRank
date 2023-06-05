@@ -11,6 +11,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -50,19 +51,57 @@ import (
   Refers to the number of significant digits to the right of the decimal point.
 */
 
-func calcMean(x []int) float64 {
-	return 0.0
+func calcMean(n int, x []int) float64 {
+	sum := 0.0
+	for _, v := range x {
+		sum += float64(v)
+	}
+	return sum / float64(n)
 }
 
-func calcMedian(x []int) float64 {
-	return 0.0
+func calcMedian(n int, x []int) float64 {
+	arr := make([]int, n)
+	copy(arr, x)
+	sort.Ints(arr)
+
+	isOdd := n%2 == 1
+	if isOdd {
+		return float64(arr[n/2])
+	}
+
+	return float64(arr[n/2-1]+arr[n/2]) / 2
 }
 
-func calcMode(x []int) float64 {
-	return 0.0
+func calcMode(n int, x []int) float64 {
+	frequencies := map[int]int{}
+
+	arr := make([]int, n)
+	copy(arr, x)
+	sort.Ints(arr)
+
+	for _, number := range arr {
+		_, ok := frequencies[number]
+		if !ok {
+			frequencies[number] = 1
+			continue
+		}
+		frequencies[number]++
+	}
+
+	mode := 0.0
+	max := 0
+	for _, number := range arr {
+		frequency := frequencies[number]
+		if frequency > max {
+			mode = float64(number)
+			max = frequency
+		}
+	}
+
+	return mode
 }
 
-func meanMedianMode() {
+func readInput() (int, []int) {
 	arr := []string{}
 	scanner := bufio.NewScanner(os.Stdin)
 	for {
@@ -79,7 +118,6 @@ func meanMedianMode() {
 	if err != nil {
 		log.Fatalln("N is not correct")
 	}
-	fmt.Println("N:", n)
 
 	x := []int{}
 	for _, v := range strings.Split(arr[1], " ") {
@@ -89,11 +127,17 @@ func meanMedianMode() {
 		}
 		x = append(x, num)
 	}
-	fmt.Println("X:", x)
-	fmt.Printf("%#v\n", x)
 
+	return n, x
 }
 
-func main() {
-	meanMedianMode()
+func meanMedianMode() {
+	n, x := readInput()
+
+	mean := calcMean(n, x)
+	median := calcMedian(n, x)
+	mode := calcMode(n, x)
+	fmt.Println(mean)
+	fmt.Println(median)
+	fmt.Println(mode)
 }
