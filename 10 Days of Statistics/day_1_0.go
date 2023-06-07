@@ -10,6 +10,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -73,11 +74,47 @@ func readInput() (int, []int) {
 	return n, x
 }
 
+func calcMedian(n int, arr []int) float64 {
+	isOdd := n%2 == 1
+	if isOdd {
+		return float64(arr[n/2])
+	}
+
+	return float64(arr[n/2-1]+arr[n/2]) / 2
+}
+
+func secondQuartile(n int, arr []int) float64 {
+	return calcMedian(n, arr)
+}
+
+func otherQuartiles(n int, arr []int) (float64, float64) {
+	isOdd := n%2 == 1
+	halfLength := n / 2
+	lowerHalf := arr[:halfLength]
+	upperHalf := []int{}
+
+	if isOdd {
+		upperHalf = arr[halfLength+1:]
+	} else {
+		upperHalf = arr[halfLength:]
+	}
+
+	return calcMedian(halfLength, lowerHalf), calcMedian(halfLength, upperHalf)
+}
+
 func quartiles() {
 	n, x := readInput()
-	fmt.Printf("n: %d, x: %v", n, x)
 
-	fmt.Printf("Not Implemented")
+	arr := make([]int, n)
+	copy(arr, x)
+	sort.Ints(arr)
+
+	q2 := secondQuartile(n, arr)
+	q1, q3 := otherQuartiles(n, arr)
+
+	fmt.Println(q1)
+	fmt.Println(q2)
+	fmt.Println(q3)
 }
 
 func main() {
