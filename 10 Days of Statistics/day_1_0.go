@@ -1,8 +1,9 @@
 /*
-Created on Tue Jun 06 22:35 2023
+  Created on Tue Jun 06 22:35 2023
 
-@author: Dmitry White
+  @author: Dmitry White
 */
+
 package main
 
 import (
