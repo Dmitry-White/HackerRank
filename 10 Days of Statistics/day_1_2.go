@@ -10,16 +10,16 @@ import (
 	"bufio"
 	"fmt"
 	"log"
+	"math"
 	"os"
 	"strconv"
 	"strings"
 )
 
 /*
-  TODO: Given an array, `values``, of `n`` integers and an array, `freqs``,
-  representing the respective frequencies of `values`'s elements,
-  construct a data set, `S``, where each `values[i]` occurs at frequency `freqs[i]`.
-  Then calculate and print `S`'s interquartile range, rounded to a scale of 1 decimal place (i.e., 12.3 format).
+  TODO: Given an array, arr, of n integers, calculate and print the standard deviation.
+  Your answer should be in decimal form, rounded to a scale of 1 decimal place (i.e., 12.3 format).
+  An error margin of +/- 0.1 will be tolerated for the standard deviation.
 */
 
 /*
@@ -79,9 +79,25 @@ func readInput() (int, []int) {
 	return n, x
 }
 
+func calcMean(n int, x []int) float64 {
+	sum := 0.0
+	for _, v := range x {
+		sum += float64(v)
+	}
+	return sum / float64(n)
+}
+
 func calcStandardDeviation(n int, x []int) float64 {
-	fmt.Println("Not Implemented")
-	return 0.0
+	mu := calcMean(n, x)
+
+	sum := 0.0
+	for _, v := range x {
+		diff := float64(v) - mu
+		sum += math.Pow(diff, 2)
+	}
+
+	sigma := math.Sqrt(sum / float64(n))
+	return sigma
 }
 
 func standardDeviation() {
@@ -89,7 +105,7 @@ func standardDeviation() {
 
 	sigma := calcStandardDeviation(n, x)
 
-	fmt.Println(sigma)
+	fmt.Printf("%0.1f", sigma)
 }
 
 func main() {
