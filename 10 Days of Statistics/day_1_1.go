@@ -11,6 +11,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -66,16 +67,63 @@ func readInput() (int, []int, []int) {
 	return n, values, freqs
 }
 
-func calcIQR(n int, values []int, freqs []int) {
-	fmt.Println("Not Implemented")
+func calcMedian(n int, arr []int) float64 {
+	isOdd := n%2 == 1
+	if isOdd {
+		return float64(arr[n/2])
+	}
+
+	return float64(arr[n/2-1]+arr[n/2]) / 2
+}
+
+func otherQuartiles(n int, arr []int) (float64, float64) {
+	isOdd := n%2 == 1
+	halfLength := n / 2
+	lowerHalf := arr[:halfLength]
+	upperHalf := []int{}
+
+	if isOdd {
+		upperHalf = arr[halfLength+1:]
+	} else {
+		upperHalf = arr[halfLength:]
+	}
+
+	return calcMedian(halfLength, lowerHalf), calcMedian(halfLength, upperHalf)
+}
+
+func buildSet(n int, values []int, freqs []int) (int, []int) {
+	expanded := []int{}
+
+	for i, freq := range freqs {
+		target := values[i]
+
+		data := []int{}
+		for j := 0; j < freq; j++ {
+			data = append(data, target)
+		}
+
+		expanded = append(expanded, data...)
+	}
+
+	sort.Ints(expanded)
+
+	return len(expanded), expanded
+}
+
+func calcIQR(n int, data []int) float64 {
+	q1, q3 := otherQuartiles(n, data)
+
+	return q3 - q1
 }
 
 func interquartileRange() {
 	n, values, freqs := readInput()
 
-	fmt.Println(n, values, freqs)
+	m, data := buildSet(n, values, freqs)
 
-	calcIQR(n, values, freqs)
+	iqr := calcIQR(m, data)
+
+	fmt.Printf("%0.1f", iqr)
 }
 
 func main() {
