@@ -6,7 +6,7 @@
   },
   "extends": ["airbnb-base", "plugin:prettier/recommended"],
   "rules": {
-    "no-plusplus": 1,
+    "no-plusplus": [1, { "allowForLoopAfterthoughts": true }],
     "no-unused-expressions": [
       "error",
       { "allowShortCircuit": true, "allowTernary": true }
