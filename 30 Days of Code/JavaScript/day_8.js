@@ -1,17 +1,19 @@
 /*
-Created on Sat May 13 14:40 2023
+  Created on Sat May 13 14:40 2023
 
-@author: Dmitry White
+  @author: Dmitry White
 */
 
-// TODO: Given  names and phone numbers,
-// assemble a phone book that maps friends' names to their respective phone numbers.
-// You will then be given an unknown number of names to query your phone book for.
-// For each `name` queried, print the associated entry from your phone book
-// on a new line in the form name=phoneNumber;
-// if an entry for `name` is not found, print Not found instead.
+/*
+  TODO: Given  names and phone numbers,
+  assemble a phone book that maps friends' names to their respective phone numbers.
+  You will then be given an unknown number of names to query your phone book for.
+  For each `name` queried, print the associated entry from your phone book
+  on a new line in the form name=phoneNumber;
+  if an entry for `name` is not found, print Not found instead.
+*/
 
-function processData(input) {
+const processData = (input) => {
   const [n, ...lines] = input.split('\n');
   const phoneBookData = lines.slice(0, n);
   const names = lines.slice(n);
@@ -28,6 +30,14 @@ function processData(input) {
       return console.log('Not found');
     }
 
-    console.log(`${name}=${result}`);
+    return console.log(`${name}=${result}`);
   });
-}
+};
+
+processData(`3
+sam 99912222
+tom 11122222
+harry 12299933
+sam
+edward
+harry`);

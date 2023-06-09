@@ -1,30 +1,32 @@
 /*
-Created on Sat May 13 16:51 2023
+  Created on Sat May 13 16:51 2023
 
-@author: Dmitry White
+  @author: Dmitry White
 */
 
-// Calculate the hourglass sum for every hourglass in A, then print the maximum hourglass sum.
-// Given a 6 X 6 2D Array, A. An hourglass in A is a subset of values with indices
-// falling in this pattern in A's graphical representation:
-//   a b c
-//     d
-//   e f g
-// There are 16 hourglasses in A, and an hourglass sum is the sum of an hourglass' values.
+/*
+  Calculate the hourglass sum for every hourglass in A, then print the maximum hourglass sum.
+  Given a 6 X 6 2D Array, A. An hourglass in A is a subset of values with indices
+  falling in this pattern in A's graphical representation:
+    a b c
+      d
+    e f g
+  There are 16 hourglasses in A, and an hourglass sum is the sum of an hourglass' values.
+*/
 
-const hourglassSum = (init_x, init_y, arr) => {
+const hourglassSum = (initX, initY, arr) => {
   const firstRow =
-    arr[init_x][init_y] + arr[init_x][init_y + 1] + arr[init_x][init_y + 2];
-  const secondRow = arr[init_x + 1][init_y + 1];
+    arr[initX][initY] + arr[initX][initY + 1] + arr[initX][initY + 2];
+  const secondRow = arr[initX + 1][initY + 1];
   const thirdRow =
-    arr[init_x + 2][init_y] +
-    arr[init_x + 2][init_y + 1] +
-    arr[init_x + 2][init_y + 2];
+    arr[initX + 2][initY] +
+    arr[initX + 2][initY + 1] +
+    arr[initX + 2][initY + 2];
 
   return firstRow + secondRow + thirdRow;
 };
 
-const doStuff = (n, arr) => {
+const calculateHourglass = (n, arr) => {
   let curr = 0;
   let max = -100;
 
@@ -37,3 +39,15 @@ const doStuff = (n, arr) => {
 
   console.log(max);
 };
+
+console.log(
+  'Hourglass: ',
+  calculateHourglass([
+    [1, 1, 1, 0, 0, 0],
+    [0, 1, 0, 0, 0, 0],
+    [1, 1, 1, 0, 0, 0],
+    [0, 0, 2, 4, 4, 0],
+    [0, 0, 0, 2, 0, 0],
+    [0, 0, 1, 2, 4, 0],
+  ]),
+);

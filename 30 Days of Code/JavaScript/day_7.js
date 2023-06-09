@@ -10,3 +10,5 @@ Created on Sat May 13 14:29 2023
 const reverseOutput = (arr) => {
   console.log(arr.reverse().join(' '));
 };
+
+reverseOutput([1, 4, 3, 2]);
