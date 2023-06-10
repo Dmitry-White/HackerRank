@@ -11,6 +11,7 @@
       "error",
       { "allowShortCircuit": true, "allowTernary": true }
     ],
+    "max-classes-per-file": ["error", { "ignoreExpressions": true, "max": 2 }],
     "import/order": [
       "error",
       {

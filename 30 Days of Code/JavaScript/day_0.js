@@ -8,9 +8,9 @@
   TODO: Write a line of code here that prints the contents of input to stdout.
 */
 
-function processData(inputString) {
+const processData = (inputString) => {
   console.log('Hello, World.');
   console.log(inputString);
-}
+};
 
 console.log(processData('JS is awesome!'));

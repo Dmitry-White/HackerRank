@@ -5,7 +5,7 @@
 */
 
 /*
-  Calculate the hourglass sum for every hourglass in A, then print the maximum hourglass sum.
+  TODO: Calculate the hourglass sum for every hourglass in A, then print the maximum hourglass sum.
   Given a 6 X 6 2D Array, A. An hourglass in A is a subset of values with indices
   falling in this pattern in A's graphical representation:
     a b c

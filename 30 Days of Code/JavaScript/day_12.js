@@ -1,13 +1,15 @@
 /*
-Created on Sat May 13 17:16 2023
+  Created on Sat May 13 17:16 2023
 
-@author: Dmitry White
+  @author: Dmitry White
 */
 
-// TODO: You are given two classes, Person and Student,
-// where Person is the base class and Student is the derived class.
-// Completed code for Person and a declaration for Student are provided for you in the editor.
-// Observe that Student inherits all the properties of Person.
+/*
+  TODO: You are given two classes, Person and Student,
+  where Person is the base class and Student is the derived class.
+  Completed code for Person and a declaration for Student are provided for you in the editor.
+  Observe that Student inherits all the properties of Person.
+*/
 
 class Person {
   constructor(firstName, lastName, identification) {
@@ -24,22 +26,21 @@ class Person {
 }
 
 class Student extends Person {
-  /*
-   *   Class Constructor
-   *
-   *   @param firstName - A string denoting the Person's first name.
-   *   @param lastName - A string denoting the Person's last name.
-   *   @param id - An integer denoting the Person's ID number.
-   *   @param scores - An array of integers denoting the Person's test scores.
+  /**
+   *  Creates a Student
+   *  @param firstName - A string denoting the Person's first name.
+   *  @param lastName - A string denoting the Person's last name.
+   *  @param id - An integer denoting the Person's ID number.
+   *  @param scores - An array of integers denoting the Person's test scores.
    */
   constructor(firstName, lastName, id, scores) {
     super(firstName, lastName, id);
     this.scores = scores;
   }
 
-  /*
-   *   Method Name: calculate
-   *   @return A character denoting the grade.
+  /**
+   *  Calculates a grade
+   *  @return A character denoting the grade.
    */
   calculate() {
     const sum = this.scores.reduce((acc, curr) => acc + curr, 0);
